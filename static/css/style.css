@@ -1,0 +1,229 @@
+:root {
+    --primary: #0d9488;        /* teal */
+    --primary-dark: #0f766e;
+    --secondary: #2563eb;      /* blue */
+    --accent: #22c55e;         /* green */
+    --bg: linear-gradient(135deg, #ecfeff, #eff6ff);
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #dbeafe;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: var(--bg);
+    min-height: 100vh;
+    color: var(--text);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+.navbar h1 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.navbar a {
+    color: #e0f2fe;
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #bbf7d0;
+    transition: .3s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* ================= TITLES ================= */
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--primary-dark);
+}
+
+/* ================= STATS ================= */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+}
+
+.stat-card {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ecfeff
+    );
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(13,148,136,.15);
+    transition: .3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+}
+
+.stat-card span {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.stat-card h2 {
+    font-size: 34px;
+    margin-top: 12px;
+    color: var(--secondary);
+}
+
+/* ================= FILTERS ================= */
+.filters {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filters select,
+.filters input {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(37,99,235,.15);
+    outline: none;
+}
+
+.filters select:focus,
+.filters input:focus {
+    border-color: var(--primary);
+}
+
+/* ================= TABLE ================= */
+.table-box {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(37,99,235,.12);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: linear-gradient(
+        90deg,
+        #dbeafe,
+        #ecfeff
+    );
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+th, td {
+    padding: 16px;
+    border-bottom: 1px solid #e0f2fe;
+}
+
+tr:hover td {
+    background: #f0fdfa;
+}
+
+/* ================= DETAIL CARD ================= */
+.detail-card {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ecfeff
+    );
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(34,197,94,.2);
+    margin-bottom: 30px;
+}
+
+.detail-card p {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+/* ================= STATUS BADGES ================= */
+.badge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.badge.inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.badge.finished {
+    background: #e0f2fe;
+    color: #075985;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .navbar a {
+        margin: 8px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+}
